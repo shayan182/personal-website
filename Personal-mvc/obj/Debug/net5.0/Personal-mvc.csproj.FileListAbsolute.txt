@@ -113,3 +113,4 @@ C:\Users\shayan\Desktop\Shayan\ASP.NET 5\MVC بخش دوم (18)\Personal-MVC\Per
 C:\Users\shayan\Desktop\Shayan\ASP.NET 5\MVC بخش دوم (18)\Personal-MVC\Personal-mvc\bin\Debug\net5.0\runtimes\win-arm\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Users\shayan\Desktop\Shayan\ASP.NET 5\MVC بخش دوم (18)\Personal-MVC\Personal-mvc\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Users\shayan\Desktop\Shayan\ASP.NET 5\MVC بخش دوم (18)\Personal-MVC\Personal-mvc\obj\Debug\net5.0\Razor\Views\Shared\header.cshtml.g.cs
+C:\Users\shayan\Desktop\Shayan\ASP.NET 5\MVC بخش دوم (18)\Personal-MVC\Personal-mvc\obj\Debug\net5.0\Razor\Views\Shared\footer.cshtml.g.cs

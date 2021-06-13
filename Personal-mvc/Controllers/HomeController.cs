@@ -16,21 +16,33 @@ namespace Personal_mvc.Controllers
         [HttpGet]
         public IActionResult Index()
         {
+
             return View();
         }
        
         [HttpPost]
         public IActionResult Index(Form form)
         {
-            var model = new Form();
+            if (!ModelState.IsValid)
+            {
+                ViewBag.error = "عملیات با شکست مواجه شد!";
+                return View(form);
+            }
+            else
+            {
+                ModelState.Clear();
+                ViewBag.success = "عملیات با موفقیت انجام شد!";
 
-            return View(model);
+
+                return View();
+            }
+            
         }
           public IActionResult redirectindex()
         {
             return RedirectToAction("Index");
         }
-
+ 
       
 
      

@@ -14,28 +14,28 @@
 <body>
     @RenderBody()
 
+
+    <h4 class="footer-head">ارتباط با ما</h4>
+
+    <article class="address">
+        <i class="fa fa-map-marker" style="font-size:48px; color: #E65F78; margin-left: 70px;"></i>
+        <span>آدرس</span><br>
+        <P>ایران، تهران، جنت آباد شمالی</P>
+    </article>
+
+    <article class="email">
+        <i class="fa fa-envelope" style="font-size:48px; color: #E65F78;margin-left:62px"></i>
+        <span>ایمیل</span><br>
+        <P>182shayan@gmail.com</P>
+    </article>
+
+    <article class="phone">
+        <i class="fa fa-phone" style="font-size:48px;color: #E65F78 ;margin-left:47px"></i>
+        <span>شماره تماس</span><br>
+        <P>+98 903 814 8518</P>
+    </article>
+
     <footer id="footer">
-        <h4 class="footer-head">ارتباط با ما</h4>
-
-        <article class="address">
-            <i class="fa fa-map-marker" style="font-size:48px; color: #E65F78; margin-left: 70px;"></i>
-            <span>آدرس</span><br>
-            <P>ایران، تهران، جنت آباد شمالی</P>
-        </article>
-
-        <article class="email">
-            <i class="fa fa-envelope" style="font-size:48px; color: #E65F78;margin-left:62px"></i>
-            <span>ایمیل</span><br>
-            <P>182shayan@gmail.com</P>
-        </article>
-
-        <article class="phone">
-            <i class="fa fa-phone" style="font-size:48px;color: #E65F78 ;margin-left:47px"></i>
-            <span>شماره تماس</span><br>
-            <P>+98 903 814 8518</P>
-        </article>
-
-
         <article>
             <!-- send massage -->
             <form asp-action="Index">
@@ -50,34 +50,54 @@
                 <button class="massage-send" type="submit">ارسال پیام</button>
 
                 <span style="        all: unset;
-        position: relative;
-        left: 43%;
-        top: 560px;
-        color: red;
-        direction: rtl;
-        width: 30px;
-        font-size: 15px;" asp-validation-for="Name"></span><br />
+                     position: relative;
+                     left: 43%;
+                     top: 560px;
+                     color: red;
+                     direction: rtl;
+                     width: 30px;
+                     font-size: 15px;" asp-validation-for="Name"></span><br />
                 <span style="all: unset;
-                              position: relative;
-                             left: 53%;
-                             top: 535px;
-                             color: red;
-                             direction: rtl;
-                             width: 30px;
-                             font-size: 15px;" asp-validation-for="Email"></span><br />
+                     position: relative;
+                     left: 53%;
+                     top: 535px;
+                     color: red;
+                     direction: rtl;
+                     width: 30px;
+                     font-size: 15px;" asp-validation-for="Email"></span><br />
                 <span style="all: unset;
-                              position: relative;
-                             left: 63%;
-                             top: 505px;
-                             color: red;
-                             direction: rtl;
-                             width: 30px;
-                             font-size: 15px;" asp-validation-for="message"></span>
+                     position: relative;
+                     left: 63%;
+                     top: 505px;
+                     color: red;
+                     direction: rtl;
+                     width: 30px;
+                     font-size: 15px;" asp-validation-for="message"></span>
+
+                @if (!string.IsNullOrWhiteSpace(ViewBag.error))
+                {
+                    <h3 style="color: red;
+                       position: relative;
+                       left: 63%;
+                       top: 505px;">
+                        @ViewBag.error
+                    </h3>
+                }
+                @if (!string.IsNullOrWhiteSpace(ViewBag.success))
+                {
+                    <h3 style="color: green;
+                       position: relative;
+                       left: 63%;
+                       top: 505px;">
+                        @ViewBag.success
+                    </h3>
+                }
 
 
 
             </form>
         </article>
+
         <section id="footer-down">
             <nav class="social-media">
                 <a target="_blank" href="https://www.instagram.com/shayantohidii/"> <i class="fa fa-instagram" aria-hidden="true"></i></a>
@@ -103,4 +123,5 @@
 <script src="lib/bootstrap/dist/css/bootstrap.min.css"></script>
 <script src="lib/jquery-validation/dist/jquery.validate.min.js"></script>
 <script src="lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+@*  *@
 </html>
