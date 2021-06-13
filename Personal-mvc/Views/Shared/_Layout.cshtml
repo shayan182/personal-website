@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model Form
+<!DOCTYPE html>
 <html lang="fa-IR">
 
 <head>
@@ -11,7 +12,7 @@
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
 </head>
 <body>
-@RenderBody()
+    @RenderBody()
 
     <footer id="footer">
         <h4 class="footer-head">ارتباط با ما</h4>
@@ -38,11 +39,43 @@
         <article>
             <!-- send massage -->
             <form asp-action="Index">
-                <input class="massage-name" type="text" placeholder="*نام شما " name="name" >
-                <input class="massage-email" type="email" placeholder="*ایمیل " name="email"><br><br><br><br><br>
-                <input class="massage-subject" type="text" placeholder="موضوع " name="subject"><br>
-                <textarea class="massage area" name="message" id="" cols="101" rows="10" placeholder="متن پیام "  ></textarea>
-                <button class="massage-send" type="submit" >ارسال پیام</button>
+                <input class="massage-name" type="text" placeholder="*نام شما " asp-for="Name">
+
+                <input class="massage-email" type="email" placeholder="*ایمیل " asp-for="Email">
+
+                <input class="massage-subject" type="text" placeholder="موضوع " asp-for="Subject"><br>
+
+                <textarea class="massage area" asp-for="message" cols="101" rows="10" placeholder="متن پیام "></textarea>
+
+                <button class="massage-send" type="submit">ارسال پیام</button>
+
+                <span style="        all: unset;
+        position: relative;
+        left: 43%;
+        top: 560px;
+        color: red;
+        direction: rtl;
+        width: 30px;
+        font-size: 15px;" asp-validation-for="Name"></span><br />
+                <span style="all: unset;
+                              position: relative;
+                             left: 53%;
+                             top: 535px;
+                             color: red;
+                             direction: rtl;
+                             width: 30px;
+                             font-size: 15px;" asp-validation-for="Email"></span><br />
+                <span style="all: unset;
+                              position: relative;
+                             left: 63%;
+                             top: 505px;
+                             color: red;
+                             direction: rtl;
+                             width: 30px;
+                             font-size: 15px;" asp-validation-for="message"></span>
+
+
+
             </form>
         </article>
         <section id="footer-down">
@@ -64,4 +97,10 @@
 <!-- smoot scroll -->
 <script src="~/js/index.js"></script>
 
+
+@* refrence for script validation *@
+<script src="lib/jquery/dist/jquery.js"></script>
+<script src="lib/bootstrap/dist/css/bootstrap.min.css"></script>
+<script src="lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 </html>

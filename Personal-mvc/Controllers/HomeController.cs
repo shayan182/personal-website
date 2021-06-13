@@ -22,7 +22,9 @@ namespace Personal_mvc.Controllers
         [HttpPost]
         public IActionResult Index(Form form)
         {
-            return new OkResult();
+            var model = new Form();
+
+            return View(model);
         }
           public IActionResult redirectindex()
         {
