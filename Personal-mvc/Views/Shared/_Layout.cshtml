@@ -37,12 +37,12 @@
 
         <article>
             <!-- send massage -->
-            <form action="">
-                <input class="massage-name" type="text" placeholder="*نام شما ">
-                <input class="massage-email" type="email" placeholder="*ایمیل "><br><br><br><br><br>
-                <input class="massage-subject" type="text" placeholder="موضوع "><br>
-                <textarea class="massage area" name="" id="" cols="101" rows="10" placeholder="متن پیام "></textarea>
-                <input class="massage-send" type="submit" value="ارسال پیام">
+            <form asp-action="Index">
+                <input class="massage-name" type="text" placeholder="*نام شما " name="name" >
+                <input class="massage-email" type="email" placeholder="*ایمیل " name="email"><br><br><br><br><br>
+                <input class="massage-subject" type="text" placeholder="موضوع " name="subject"><br>
+                <textarea class="massage area" name="message" id="" cols="101" rows="10" placeholder="متن پیام "  ></textarea>
+                <button class="massage-send" type="submit" >ارسال پیام</button>
             </form>
         </article>
         <section id="footer-down">
