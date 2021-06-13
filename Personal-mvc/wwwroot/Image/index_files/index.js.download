@@ -1,0 +1,109 @@
+let display = document.querySelector("#display");
+let btncClear = document.querySelector(".btn-clear");
+let btnClearLastAction = document.querySelector(".btn-last-action");
+let btnBackspace = document.querySelector(".btn-backspace");
+let btnDiv = document.querySelector(".btn-div");
+let bntMul = document.querySelector(".bnt-mul");
+let btnMin = document.querySelector(".btn-min");
+let btnPlus = document.querySelector(".btn-plus");
+let btnPoint = document.querySelector(".btn-point");
+let btnEquels = document.querySelector(".btn-equels");
+
+let btnNumbers = document.querySelectorAll('.btn-number');
+
+let setPoint = false;
+let number1, number2, result;
+let op;
+let setResult = false;
+btnPlus.addEventListener('click', (e) => {
+    number1 = Number(display.textContent);
+    display.textContent = 0;
+    op = "+"
+})
+btnMin.addEventListener('click', (e) => {
+    number1 = Number(display.textContent);
+    display.textContent = 0;
+    op = "-"
+})
+btnDiv.addEventListener('click', (e) => {
+    number1 = Number(display.textContent);
+    display.textContent = 0;
+    op = "/"
+})
+bntMul.addEventListener('click', (e) => {
+    number1 = Number(display.textContent);
+    display.textContent = 0;
+    op = "*"
+
+})
+
+btnEquels.addEventListener('click', (e) => {
+    if (setResult == false) {
+        number2 = Number(display.textContent)
+    } else {
+        number1 = Number(display.textContent)
+    }
+    switch (op) {
+        case "+":
+            result = number1 + number2;
+            break
+        case "-":
+            result = number1 - number2;
+            break
+        case "/":
+            result = number1 / number2;
+            break
+        case "*":
+            result = number1 * number2;
+            break
+    }
+    display.textContent = result;
+    setResult = true;
+})
+btncClear.addEventListener("click", (e) => {
+    display.textContent = 0;
+    setPoint = false;
+    setResult = false;
+    number1 = false;
+    number2 = false;
+})
+btnClearLastAction.addEventListener('click',(e)=>{
+    display.textContent = 0;
+})
+btnNumbers.forEach((item) => {
+    item.addEventListener("click", (e) => {
+        if (display.textContent == 0) {
+            display.textContent = item.textContent;
+        } else {
+            display.textContent += item.textContent;
+        }
+
+    })
+})
+
+btnBackspace.addEventListener("click", (e) => {
+    let len = display.textContent.length;
+    let lastdigit = display.textContent.substr(0, len - 1)
+
+    if (display.textContent > 1) {
+        display.textContent = display.textContent.substr(0, len - 1);
+    }
+    else {
+        display.textContent = "0"
+    }
+
+    if (lastdigit = ".") {
+        setPoint = false;
+        console.log(lastdigit);
+    }
+
+})
+
+btnPoint.addEventListener("click", (e) => {
+    if (setPoint != true) {
+        display.textContent += ".";
+        setPoint = true;
+    } else {
+
+    }
+})
